@@ -1,0 +1,30 @@
+{
+    "name": "kompaneytsev/php-algo",
+    "require-dev": {
+        "phpunit/phpunit": "^6.4",
+        "monolog/monolog": "^1.23"
+    },
+    "require": {
+        "php": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "kompaneytsev\\phpAlgo\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "kompaneytsev\\phpAlgo\\tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit tests/",
+        "perf": [
+            "php bst_perfomance.php 'logs/small.txt'",
+            "php bst_perfomance.php 'logs/large.txt'"
+        ],
+        "post-install-cmd": [
+            "php before_start.php"
+        ]
+    }
+}
